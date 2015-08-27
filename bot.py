@@ -63,7 +63,7 @@ class DJBot(irc.bot.SingleServerIRCBot):
 					self._send_answer(c, e, 'Usage: !play <url>')
 					return
 				self._handle_now(c, e, tokens[1])
-			elif tokens[0] == "!skip":
+			elif tokens[0] in ["!skip","!next"]:
 				self._handle_skip(c, e)
 			elif tokens[0] == "!stop":
 				self._handle_stop(c, e)
