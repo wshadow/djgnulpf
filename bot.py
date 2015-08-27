@@ -67,9 +67,9 @@ class DJBot(irc.bot.SingleServerIRCBot):
 				self._handle_skip(c, e)
 			elif tokens[0] == "!stop":
 				self._handle_stop(c, e)
-			elif tokens[0] == "!queue":
+			elif tokens[0] in ["!queue","!add"]:
 				if len(tokens) < 2:
-					self._send_answer(c, e, 'Usage: !queue <url>')
+					self._send_answer(c, e, 'Usage: {} <url>'.format(tokens[0]))
 					return
 				self._handle_queue(c, e, tokens[1])
 			elif tokens[0] == "!list":
